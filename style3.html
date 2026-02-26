@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>Lania · accompagnatrice haut de gamme</title>
+  <!-- Polices : Playfair pour le chic français, Montserrat pour le moderne -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #faf7f2;  /* crème douce */
+      color: #1a1a1a;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* ===== STYLE ÉDITORIAL / HAUTE COUTURE ===== */
+    /* lumière, élégant, avec des accents dorés */
+
+    .navbar {
+      padding: 40px 0 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #1a1a1a;
+    }
+    .logo span {
+      font-weight: 700;
+      color: #c8a27b;  /* or rosé doux */
+      font-style: italic;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 3rem;
+      font-weight: 400;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #1a1a1a;
+      transition: 0.2s;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 4px;
+    }
+    .nav-links a:hover {
+      color: #c8a27b;
+      border-bottom: 1px solid #c8a27b;
+    }
+
+    /* --- hero -- */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 60px;
+      padding: 60px 0 80px;
+    }
+    .hero-text {
+      flex: 1 1 350px;
+    }
+    .hero-text .tag {
+      font-size: 0.75rem;
+      letter-spacing: 4px;
+      font-weight: 500;
+      color: #c8a27b;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 5.2rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: #1a1a1a;
+      margin-bottom: 20px;
+    }
+    .hero-text h1 strong {
+      font-weight: 700;
+      color: #c8a27b;
+      display: block;
+      font-style: italic;
+    }
+    .hero-text p {
+      font-size: 1.1rem;
+      color: #4d4d4d;
+      max-width: 500px;
+      margin-bottom: 40px;
+      font-weight: 300;
+      border-left: 2px solid #c8a27b;
+      padding-left: 24px;
+    }
+    .hero-img {
+      flex: 1 1 350px;
+      background: #e8ddd0;
+      border-radius: 0px;
+      overflow: hidden;
+      box-shadow: 20px 20px 0 #c8a27b20, -10px -10px 0 #f0e4d8;
+      aspect-ratio: 3 / 4;
+      background: linear-gradient(145deg, #d4c2b0 0%, #eee5dc 100%);
+      position: relative;
+    }
+    .hero-img::after {
+      content: "L I S A";
+      position: absolute;
+      bottom: 30px;
+      left: 30px;
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: rgba(200, 162, 123, 0.4);
+      letter-spacing: 8px;
+    }
+
+    /* --- sections --- */
+    section {
+      padding: 80px 0;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 6vw, 3.8rem);
+      font-weight: 400;
+      margin-bottom: 60px;
+      letter-spacing: -0.5px;
+      color: #1a1a1a;
+      position: relative;
+      display: inline-block;
+    }
+    .section-title span {
+      font-weight: 700;
+      color: #c8a27b;
+      font-style: italic;
+    }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 80px;
+      height: 2px;
+      background: #c8a27b;
+    }
+
+    /* --- services cards -- */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+    }
+    .service-card {
+      background: #ffffff;
+      padding: 40px 32px;
+      border-radius: 0px;
+      box-shadow: 0 15px 30px -15px rgba(0,0,0,0.1);
+      transition: 0.2s all ease;
+      border: 1px solid rgba(200, 162, 123, 0.2);
+      position: relative;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 40px -15px #c8a27b80;
+      border-color: #c8a27b;
+    }
+    .service-icon {
+      font-size: 2.2rem;
+      color: #c8a27b;
+      margin-bottom: 28px;
+    }
+    .service-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #1a1a1a;
+    }
+    .service-features {
+      list-style: none;
+      margin: 24px 0 28px;
+      color: #4d4d4d;
+      font-size: 0.95rem;
+    }
+    .service-features li {
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid #f0e4d8;
+      font-weight: 400;
+    }
+    .service-features li i {
+      color: #c8a27b;
+      width: 22px;
+      font-size: 1.1rem;
+    }
+    .price {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 2rem;
+      color: #1a1a1a;
+      border-top: 2px solid #c8a27b40;
+      padding-top: 20px;
+      margin-top: 16px;
+    }
+    .price small {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 0.9rem;
+      color: #808080;
+    }
+    .rates-note {
+      margin-top: 60px;
+      background: #ffffff;
+      padding: 24px 40px;
+      font-weight: 400;
+      color: #1a1a1a;
+      font-size: 1rem;
+      border-left: 6px solid #c8a27b;
+      display: inline-block;
+      box-shadow: 10px 10px 0 #f0e4d8;
+    }
+    .rates-note i {
+      margin-right: 14px;
+      color: #c8a27b;
+      font-size: 1.4rem;
+      vertical-align: middle;
+    }
+
+   /* --- gallery -- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.gallery-item {
+  aspect-ratio: 3 / 4;
+  border-radius: 0px;
+  box-shadow: 15px 15px 0 #c8a27b20;
+  transition: 0.3s;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+
+.gallery-item:nth-child(1) {
+  background-image: url('1.jpg');
+}
+
+.gallery-item:nth-child(2) {
+  background-image: url('3.jpg');
+}
+
+.gallery-item:nth-child(3) {
+  background-image: url('5.jpg');
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+  box-shadow: 20px 20px 0 #c8a27b60;
+}
+
+
+    /* --- contact area (adresse + réseaux) --- */
+    .contact-flex {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 60px;
+      background: #ffffff;
+      padding: 60px 60px;
+      border: 1px solid #c8a27b30;
+      box-shadow: 25px 25px 0 #f0e4d8;
+    }
+    .contact-info {
+      flex: 1 1 350px;
+    }
+    .contact-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      font-weight: 600;
+      margin-bottom: 40px;
+      color: #1a1a1a;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin: 32px 0;
+      font-size: 1.1rem;
+      font-weight: 400;
+      flex-wrap: wrap;
+      background: #faf7f2;
+      padding: 16px 28px;
+      border-left: 4px solid #c8a27b;
+    }
+    .contact-detail i {
+      width: 48px;
+      height: 48px;
+      background: #c8a27b20;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #c8a27b;
+      font-size: 1.6rem;
+    }
+    .contact-detail span {
+      word-break: break-word;
+      color: #1a1a1a;
+    }
+    .social-links {
+      margin-top: 48px;
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .social-links a {
+      color: #1a1a1a;
+      font-size: 2.2rem;
+      transition: 0.15s;
+      opacity: 0.7;
+    }
+    .social-links a:hover {
+      color: #c8a27b;
+      opacity: 1;
+      transform: translateY(-3px);
+    }
+
+    /* footer */
+    .footer {
+      text-align: center;
+      padding: 40px 0 60px;
+      color: #808080;
+      font-size: 0.9rem;
+      border-top: 1px solid #e0d6cc;
+      font-weight: 300;
+    }
+
+    /* ===== responsive ===== */
+    @media screen and (max-width: 800px) {
+      .container {
+        padding: 0 24px;
+      }
+      .navbar {
+        flex-direction: column;
+        text-align: center;
+      }
+      .nav-links {
+        gap: 2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+      .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+        border-left: none;
+        border-top: 2px solid #c8a27b;
+        padding-left: 0;
+        padding-top: 20px;
+      }
+      .section-title {
+        display: block;
+        text-align: center;
+      }
+      .section-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        max-width: 450px;
+        margin: 0 auto;
+      }
+      .contact-flex {
+        padding: 40px 30px;
+        text-align: center;
+      }
+      .contact-detail {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+      }
+      .social-links {
+        justify-content: center;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .logo {
+        font-size: 1.8rem;
+      }
+      .nav-links {
+        gap: 1.2rem;
+        font-size: 0.8rem;
+      }
+      .hero-text h1 {
+        font-size: 2.8rem;
+      }
+      .service-card {
+        padding: 30px 24px;
+      }
+      .price {
+        font-size: 1.8rem;
+      }
+    }
+
+    .btn-reserve {
+      text-decoration: none;
+      background: transparent;
+      color: #1a1a1a;
+      padding: 14px 42px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      display: inline-block;
+      border: 2px solid #c8a27b;
+      letter-spacing: 2px;
+      transition: 0.2s;
+    }
+    .btn-reserve:hover {
+      background: #c8a27b;
+      color: white;
+      border-color: #c8a27b;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- navigation -->
+    <nav class="navbar">
+      <div class="logo">Vanessa Lisa </div>
+      <div class="nav-links">
+        <a href="#home">Accueil</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Galerie</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <div id="home" class="hero">
+      <div class="hero-text">
+        <div class="tag">accompagnatrice haut de gamme</div>
+        <h1>Lisa <strong>l'art de la présence</strong></h1>
+        <p>Élégance intemporelle pour les plus exigeants. Discrète, cultivée, inoubliable.</p>
+        <a href="#contact" class="btn-reserve">Contacter</a>
+      </div>
+      <img src="2.jpg" alt="Lania" class="hero-img">
+    </div>
+
+    <!-- SERVICES -->
+<section id="services">
+  <h2 class="section-title"><span>expériences</span> sur mesure</h2>
+  <div class="services-grid">
+    <!-- Une Heure -->
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-clock"></i></div>
+      <h3>Une Heure</h3>
+      <ul class="service-features">
+        <li><i class="fas fa-check"></i> Massage / douche / Baise...</li>
+        <li><i class="fas fa-check"></i> 69 / French kiss / Boyfriend treatment...</li>
+        <!--<li><i class="fas fa-check"></i> </li>-->
+      </ul>
+      <div class="price">300-.<small></small></div>
+    </div>
+    <!-- Deux Heures -->
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-hourglass-half"></i></div>
+      <h3>Deux Heures</h3>
+      <ul class="service-features">
+        <li><i class="fas fa-check"></i> Massage / douche / Baise...</li>
+        <li><i class="fas fa-check"></i> 69 / French kiss / Boyfriend treatment...</li>
+        <li><i class="fas fa-check"></i> absolument tout ce que mes clients désirent.</li>
+      </ul>
+      <div class="price">400-.<small></small></div>
+    </div>
+    <!-- Trois Heures -->
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-hourglass-end"></i></div>
+      <h3>Trois Heures</h3>
+      <ul class="service-features">
+        <li><i class="fas fa-check"></i> Massage / douche / Baise...</li>
+        <li><i class="fas fa-check"></i> 69 / French kiss / Boyfriend treatment...</li>
+        <li><i class="fas fa-check"></i> absolument tout ce que mes clients désirent.</li>
+      </ul>
+      <div class="price">500-.<small></small></div>
+    </div>
+    <!-- La nuitée -->
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-moon"></i></div>
+      <h3>La nuitée</h3>
+      <ul class="service-features">
+        <li><i class="fas fa-check"></i> Massage / douche / Baise...</li>
+        <li><i class="fas fa-check"></i> 69 / French kiss / Boyfriend treatment...</li>
+        <li><i class="fas fa-check"></i> absolument tout ce que mes clients désirent.</li>
+      </ul>
+      <div class="price">700-.<small></small></div>
+    </div>
+  </div>
+  <div class="rates-note">
+    <i class="fas fa-feather"></i> Toutes nos prestations incluent un service sur mesure · 18+ uniquement
+  </div>
+</section>
+    <!-- GALERIE -->
+    <section id="gallery">
+      <h2 class="section-title"><span>moments</span> éditoriaux</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item" role="img" aria-label="Lania éditorial 1"></div>
+        <div class="gallery-item" role="img" aria-label="Lania éditorial 2"></div>
+        <div class="gallery-item" role="img" aria-label="Lania éditorial 3"></div>
+      </div>
+      <p style="text-align: right; margin-top: 24px; color: #c8a27b; font-style: italic;"><i class="fas fa-camera"></i> portfolio exclusif — disponible sur demande</p>
+    </section>
+
+    <!-- CONTACT (pas de formulaire, adresse + réseaux seulement) -->
+    <section id="contact">
+      <h2 class="section-title"><span>entrons</span> en contact</h2>
+      <div class="contact-flex">
+        <div class="contact-info">
+          <h3>réservez votre instant</h3>
+          <div class="contact-detail">
+            <i class="fas fa-map-pin"></i>
+            <span><strong>Swiss</strong> · <strong>Fribourg</strong> · <strong>Bern</strong> · <strong>Vaud</strong></span>
+          </div>
+          <div class="contact-detail">
+            <i class="fas fa-phone-alt"></i>
+            <span>+41 79 413 77 79</span>
+          </div>
+          <div class="contact-detail">
+            <i class="fas fa-envelope"></i>
+            <span>Lisavannessa44@gmail.com</span>
+          </div>
+          <div class="social-links">
+           <!-- <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>-->
+            <a href="https://www.tiktok.com/@vanessa_l44" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://t.me/lisavanessa20" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+            <a href="https://wa.me/41794137779?text=Bonjour%20Lisa%2C%20je%20souhaite%20prendre%20rendez-vous" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            
+          </div>
+          <p style="margin-top: 48px; background: #faf7f2; padding: 16px 24px; border-left: 4px solid #c8a27b; font-size: 0.95rem;">
+            <i class="fas fa-clock"></i> Réponse sous 2h · discrétion absolue · 18+
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© 2025 Lisa · tous droits réservés · sur rendez-vous uniquement · adultes 18+</p>
+    </footer>
+  </div>
+
+  <!-- smooth scroll -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.nav-links a[href^="#"], .hero-text a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
